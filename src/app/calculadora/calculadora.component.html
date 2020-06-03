@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="value1">Valor 1</label>
+        <input
+          id="value1"
+          class="form-control"
+          type="number"
+          onkeydown="javascript: return event.keyCode === 8 ||
+event.keyCode === 46 ? true : !isNaN(Number(event.key))"
+          [(ngModel)]="value1"
+          name="value1"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="value2">Valor 2</label>
+        <input
+          id="value2"
+          class="form-control"
+          type="number"
+          onkeydown="javascript: return event.keyCode === 8 ||
+event.keyCode === 46 ? true : !isNaN(Number(event.key))"
+          [(ngModel)]="value2"
+          name="value2"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>
+        Suma: <b>{{ value1 + value2 }}</b>
+      </p>
+    </div>
+    <div class="col">
+      <p>
+        Resta: <b>{{ value1 - value2 }}</b>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>
+        Multiplicacion: <b>{{ value1 * value2 }}</b>
+      </p>
+    </div>
+    <div class="col">
+      <p *ngIf="value2 != 0">
+        Division: <b>{{ value1 / value2 }}</b>
+      </p>
+    </div>
+  </div>
+</div>
